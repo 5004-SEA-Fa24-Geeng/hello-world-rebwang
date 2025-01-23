@@ -54,7 +54,7 @@ public class Greeter {
      * @param name name of the person to greet
      * @param locality the locality in which to greet them.
      */
-    public Greeter(String name, int locality) {
+    public Greeter(String name, int locality) throws IllegalArgumentException {
         this.name = name;
         if (locality < 1 || locality > localityList.size()) {
             throw new IllegalArgumentException(
