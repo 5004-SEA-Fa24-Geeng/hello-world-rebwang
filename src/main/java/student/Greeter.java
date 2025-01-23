@@ -105,8 +105,10 @@ public class Greeter {
      * @return the greeting
      * @see #greet(boolean)
      */
-    public String greet() {return greet(true); // assumes terminal printing/ascii only first
+    public String greet() {
+        return greet(true); // assumes terminal printing/ascii only first
     }
+
 
     /**
      * This method is used to greet the user. It will return a greeting based on their set locality.
@@ -171,6 +173,7 @@ public class Greeter {
     /**
      * Returns the locality as a string. If the locality is not between 1 and localityList.size() it
      * will return "USA"
+     * @param locality: int -> the locality number represent country
      * @return the locality as a string
      */
     private String getLocalityString(int locality) {
