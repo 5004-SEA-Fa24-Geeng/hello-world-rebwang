@@ -45,6 +45,47 @@ public class Greeting {
         return this.localityID;
     }
 
+    public String getLocalityName() {
+        return this.localityName;
+    }
+
+    public String getAsciiGreeting() {
+        return this.asciiGreeting;
+    }
+
+    public String getUnicodeGreeting() {
+        return this.unicodeGreeting;
+    }
+
+    public String getFormatStr() {
+        if (this.localityName.equals("China")) {
+            return String.format("%%s, %s!", this.unicodeGreeting);
+        }
+        else {
+            return String.format("%s, %%s!", this.unicodeGreeting);
+        }
+    }
+
+    public String getFormatStr(boolean asciiOnly) {
+        if (asciiOnly) {
+            if (this.localityName.equals("China")) {
+                return String.format("%%s, %s!", this.asciiGreeting);
+            }
+            else {return String.format("%s, %%s!", this.asciiGreeting);}
+        }
+        else {
+            if (this.localityName.equals("China")) {
+                return String.format("%%s, %s!", this.unicodeGreeting);
+            }
+            else {return String.format("%s, %%s!", this.unicodeGreeting);}
+        }
+    }
+
+//    public String toString() {
+//
+//    }
+
+
     public static void main(String[] args) {
 
     }
