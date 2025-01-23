@@ -1,12 +1,8 @@
 package student;
-/**
- * This class is a place holder which you will fully implement based on the javadoc.
- * https://cs5004-khoury-lionelle.github.io/hello_world/student/package-summary.html
- */
 
 /**
  * The greeting class stores the locality ID, locality name, and a string format of the greeting
- * both ascii and unicode. That way the various ways to look at the greeting are paired together,
+ * both ascii and Unicode. That way the various ways to look at the greeting are paired together,
  * which could simplify the process of looking up the greeting making it easier to add additional
  * greeting types without having to change code in other places.
  */
@@ -36,7 +32,7 @@ public class Greeting {
     }
 
     /**
-     * This is a constructor for the Greeting class that takes 3 arguments
+     * This is a constructor for the Greeting class that takes 3 arguments.
      * @param localityID int -> a number 1-4 represent country
      * @param localityName String -> country name
      * @param greeting String -> greeting message

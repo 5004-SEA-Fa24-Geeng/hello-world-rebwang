@@ -173,7 +173,7 @@ public class Greeter {
     /**
      * Returns the locality as a string. If the locality is not between 1 and localityList.size() it
      * will return "USA"
-     * @param locality: int -> the locality number represent country
+     * @param locality int -> the locality number represent country
      * @return the locality as a string
      */
     private String getLocalityString(int locality) {
