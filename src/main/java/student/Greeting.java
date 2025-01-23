@@ -26,11 +26,11 @@ public class Greeting {
     /**
      * Constructs a new Greeting object and initializes to the given localityID, localityName,
      * asciiGreeting, unicodeGreeting, and formatStr.
-     * @param localityID
-     * @param localityName
-     * @param asciiGreeting
-     * @param unicodeGreeting
-     * @param formatStr
+     * @param localityID: int
+     * @param localityName: String
+     * @param asciiGreeting: String
+     * @param unicodeGreeting: String
+     * @param formatStr: String
      */
     public Greeting(int localityID, String localityName, String asciiGreeting,
                     String unicodeGreeting, String formatStr) {
@@ -81,12 +81,9 @@ public class Greeting {
         }
     }
 
-//    public String toString() {
-//
-//    }
-
-
-    public static void main(String[] args) {
+    public String toString() {
+        return "{localityID:" + this.localityID + ", localityName:\"" + this.localityName +
+                "\", asciiGreeting:\"" + this.asciiGreeting + "\", unicodeGreeting:\"" + this.unicodeGreeting + "\"}";
 
     }
 
