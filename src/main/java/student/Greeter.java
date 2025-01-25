@@ -184,7 +184,7 @@ public class Greeter {
     }
 
     /**
-     * For new objects is is often a good idea to override the hashCode method.
+     * For new objects ii is often a good idea to override the hashCode method.
      * HashCodes are used in various data structures (like hashtables) to provide a 'unique'
      * identifier for an object. In this case as long as the name and locality are the same, the
      * hashcode will be the same.
@@ -197,7 +197,7 @@ public class Greeter {
     }
 
     /**
-     * For new objects is is often a good idea to override the equals method.
+     * For new objects it is often a good idea to override the equals method.
      * In this case, we can compare two greeter objects and if the name and the locality are the
      * same, they are treated as the same object. Without this, it would actually compare the memory
      * addresses of the objects to confirm they are the same.

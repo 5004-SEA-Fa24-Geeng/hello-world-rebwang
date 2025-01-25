@@ -22,46 +22,70 @@ ConsoleView --> Greeter : uses
  class Greeter {
      - name : String
      - locality : int
+     - localityList: List String
+     - HAWAII: int
+     - CHINA: int
+     - ITALY: int
+     - DEFAULT_LOCALITY: int
      + Greeter(String name)
+     + Greeter(String name, int locality)
      + getName() : String
+     + getLocality() : int
+     + setLocality() : void
+     + greet() : String
+     + greet(boolean asciiOnly) : String
+     - getLocalityString(int locality) : String
+     + hashCode() : int
+     + equals(Object obj) : boolean
+     + toString() : String
+     + getLocalityList() : List String
  }
  class ConsoleView {
- 
+     - SCANNER: Scanner
+     - LOCALITY_OPTIONS: List
+     - ConsoleView()
+     + getName() : String
+     + getLocality() : int
+     + checkRunAgain() : boolean
+     + printGreeting(String greeting) : void
  }
 ```
 
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
-
+> AlohaWorld is the driver of the program, which contains only the main method. Within the main method, it calls static methods in consoleView to interact with users. For example taking in user inputs and print out the messages. 
+> 
+> In AlohaWorld main method, it also creates a Greeter object, where Greeter class stores data of localityList, localityID, and has methods that process formatted greet message that consoleView can access and print out. 
 
 ## Assignment Questions
 
 1. List three additional java syntax items you didn't know when reading the code.  (make sure to use * for the list items, see example below, the backtick marks are used to write code inline with markdown)
-   
-   * (example) `final class`
 
-2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section. 
+   * `Integer.parseInt(input)`
+   * `String.format()`
+   * `instanceof`
 
-    * (example) The `final` keyword when used on a class prevents the class from being subclassed. This means that the class cannot be extended by another class. This is useful when you want to prevent a class from being modified or extended[^1] . It is often the standard to do this when a class only contains static methods such as driver or utility classes. Math in Java is an example of a final class[^2] .
+2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section.
+    * `Integer.parseInt(input)` is used to convert a String into an int. For example: `String input = "50"` `int result = Integer.parseInt(input)`, the result will be 50 in integer.[^1]
+    * `String.format()` is used to create a formatted string using the specified format string and arguments. Placeholders like `%d` (for integers), `%s` (for strings), and `%f` (for float) are replaced with actual values.[^2]
+    * `instanceof` is a keyword used to check if an object is an instance of a specific class or subclass. It returns true if the object is of the specified type and false otherwise. This is especially useful for type-checking in polymorphism or casting safely.[^3]
 
 3. What does `main` do in Java? 
 
-    Go ahead and answer the question as a short paragraph / few sentences. Notice the indent, this is valid because it is a list item. (erase this line before writing.)
-
+   The main method is the entry point for a Java application. It is where the program begins execution.
 
 4. What does `toString()` do in Java? Why should any object class you create have a `toString()` method?
 
-    Same as above - short answer
+   It creates a string representation of an object, we can customize how we want the object is described. Usually used for debugging and print meaningful information about the object.
 
 5. What is javadoc style commenting? What is it used for? 
 
-    Same as above - short answer
-
+   The javadoc style comments start with /** and describe classes, methods, or fields. It's used to generate documentation for Java programs.
 
 6. Describe Test Driving Development (TDD) in your own words. 
 
-    Same as above - short answer    
+    It's a software development process that writes tests before implementing the code. This process would help having fewer bugs.
 
 7. Go to the [Markdown Playground](MarkdownPlayground.md) and add at least 3 different markdown elements you learned about by reading the markdown resources listed in the document. Additionally you need to add a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that there). Add the elements into the markdown file, so that the formatting changes are reserved to that file. 
 
@@ -73,7 +97,6 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
 
-
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
 
@@ -84,12 +107,13 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 ## References
 
-[^1]: Final keyword in Java: 2024. https://www.geeksforgeeks.org/final-keyword-in-java/. Accessed: 2024-03-30. 
+[^1]: Oracle Docs: Integer.parseInt(). https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#parseInt-java.lang.String-. Accessed: 2025-01-24. 
 
-[^2]: Math (Java Platform SE 17). https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html. Accessed: 2024-03-30.
+[^2]: Oracle Docs: String.format(). https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-. Accessed: 2025-01-24.
 
+[^3]: Oracle Docs: instanceof. https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.20.2. Accessed: 2025-01-24.
 
-<!-- This is a comment, below this link the links in the document are placed here to make ti easier to read. This is an optional style for markdown, and often as a student you will include the links inline. for example [mermaid](https://mermaid.js.org/intro/syntax-reference.html) -->
+<!-- This is a comment, below this link the links in the document are placed here to make it easier to read. This is an optional style for markdown, and often as a student you will include the links inline. for example [mermaid](https://mermaid.js.org/intro/syntax-reference.html) -->
 [mermaid]: https://mermaid.js.org/intro/syntax-reference.html
 [AlohaWorld.java]: src/main/java/student/AlohaWorld.java
 [Greeter.java]: src/main/java/student/Greeter.java
