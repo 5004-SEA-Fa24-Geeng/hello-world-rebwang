@@ -54,9 +54,9 @@ ConsoleView --> Greeter : uses
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
-> AlohaWorld is the driver of the program, which contains only the main method. Within the main method, it calls static methods in consoleView to interact with users. For example taking in user inputs and print out the messages. 
-> 
-> In AlohaWorld main method, it also creates a Greeter object, where Greeter class stores data of localityList, localityID, and has methods that process formatted greet message that consoleView can access and print out. 
+
+AlohaWorld is the driver of the program, which contains only the main method. Within the main method, it calls static methods in consoleView to interact with users. For example taking in user inputs and print out the messages.
+In AlohaWorld main method, it also creates a Greeter object, where Greeter class stores data of localityList, localityID, and has methods that process formatted greet message that consoleView can access and print out.
 
 ## Assignment Questions
 
@@ -68,8 +68,8 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 
 2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section.
     * `Integer.parseInt(input)` is used to convert a String into an int. For example: `String input = "50"` `int result = Integer.parseInt(input)`, the result will be 50 in integer.[^1]
-    * `String.format()` is used to create a formatted string using the specified format string and arguments. Placeholders like `%d` (for integers), `%s` (for strings), and `%f` (for float) are replaced with actual values.[^2]
-    * `instanceof` is a keyword used to check if an object is an instance of a specific class or subclass. It returns true if the object is of the specified type and false otherwise. This is especially useful for type-checking in polymorphism or casting safely.[^3]
+    * `String.format()` is used to create a formatted string using the specified format string and arguments. Placeholders like `%d`, `%s`, and `%f` will be replaced with actual values.[^2]
+    * `instanceof` is a keyword used to check if an object is an instance of a specific class or subclass. It returns boolean.[^3]
 
 3. What does `main` do in Java? 
 
@@ -97,8 +97,11 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
 
+   By doing so, we can separate the user interface from the program's logic and data handling. It makes us easier to maintain, modify, or extend the code in the future.
+
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
+   I would want to store greetings and their corresponding languages in an external file so that it's easier to add or modify new languages and greetings without modifying the code.
 
 
 > [!IMPORTANT]
